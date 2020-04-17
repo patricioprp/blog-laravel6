@@ -16,3 +16,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+#Route::get('articles', function () {
+#    echo 'Esta es la seccion de articulos';
+#});
+
+#Route::get('articles/{name?}', function ($name = "Invitado") {
+#    echo 'Bienvenido ' .$name;
+#});
+
+Route::group(['prefix' => 'articles'],function () {
+
+    Route::get('view/{article?}', function ($article = "Vacio") {
+        echo $article;
+    });
+});
