@@ -6,7 +6,7 @@
 
     {!! Form::open(['route'=> 'users.store', 'POST']) !!}
 
-        <div class="form-group">
+    </p><div class="form-group"></p>
             {!! Form::label('name', 'Nombre', ['class' => 'control-label']) !!}
             {!! Form::text('name', '', ['class' => 'form-control','required','placeholder' => 'Nombre Completo']) !!}
 
@@ -29,8 +29,9 @@
 
     <div class="form-group">
 
-        {!! Form::submit('Registrar', ['class' => 'form-control']) !!}
+        {!! Form::submit('Registrar', ['class' => 'btn btn-primary']) !!}
         </div>
     {!! Form::close() !!}
+
 
 @endsection
