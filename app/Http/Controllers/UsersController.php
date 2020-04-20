@@ -12,7 +12,7 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //listado de usuarios
     {
         $users = User::orderBy('id', 'ASC')->paginate(10);
         return view ('admin.users.index')->with('users',$users);
@@ -87,6 +87,9 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->hdelete();
+        flash('Usuario '. $user->name . 'a sido borrado de forma exitosa')->warning();
+        return redirect()->route('users.index');
     }
 }

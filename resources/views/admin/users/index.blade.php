@@ -23,14 +23,14 @@
                 <td>{{$user -> email}}
                 <td>
                     @if ($user->type == "admin")
-                        <button type="button" class="btn btn-danger">{{$user->type}}</button>
+                        <span class="label label-danger"> {{$user->type}}</span>
                     @else
-                        <button type="button" class="btn btn-primary">{{$user->type}}</button>
+                        <span class="label label-primary"> {{$user->type}}</span>
                     @endif
-
                 </td>
-                <td>{{$user -> type}}</td>
-                <td><a href="" class="btn btn-danger"> <a href="" class="btn btn-warning"></a> </a></div></td>
+                <td><a href="" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+
+                    <a href=" {{ route('users.destroy', $user->id) }}" onclick="return confirm('¿Esta seguro que desea eliminarlo?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a></td>
             </tr>
         @endforeach
         </tbody>
