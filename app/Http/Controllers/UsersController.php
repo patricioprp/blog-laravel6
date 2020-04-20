@@ -39,7 +39,10 @@ class UsersController extends Controller
         $user = new User($request->all());
         $user-> password = bcrypt($request->password);
         $user -> save();
-        dd('Usuario Creado');
+
+        flash("Usuario " .$user->name ." Creado Correctamente");
+        return redirect()->route('users.index');
+
     }
 
     /**
