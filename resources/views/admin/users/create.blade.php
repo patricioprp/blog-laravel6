@@ -28,7 +28,7 @@
 
     <div class="form-group">
         {!! Form::label('password', 'Contraseña') !!}
-        {!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'***********', 'required']) !!}
+        {!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'Conformada por 4 digitos alfanumericos como minimo y 30 como maximo', 'required']) !!}
     </div>
 
     <div class="form-group">
