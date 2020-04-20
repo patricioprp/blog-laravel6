@@ -24,7 +24,7 @@
 
     <div class="form-group">
         {!! Form::label('type', 'Tipo') !!}
-        {!! Form::select('type',[''=>'Seleccione un nivel','member'=> 'Miembro','admin'=> 'Administrador'], 'null',['class'=>'form-control']) !!}
+        {!! Form::select('type',[''=>'Seleccione un nivel','member'=> 'Miembro','admin'=> 'Administrador'], 'null',['class'=>'form-control','required']) !!}
     </div>
 
     <div class="form-group">
