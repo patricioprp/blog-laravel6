@@ -25,7 +25,9 @@
         @endforeach
         </tbody>
     </table>
-
+<div class="text-center">
+{!! $categories->render() !!}
+</div>
     <a href="{{route('categories.create')}}" class="btn btn-info float-right">Registrar Categoria</a>
 
 @endsection
