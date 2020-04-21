@@ -3,7 +3,6 @@
 @section('title','Lista de Usuarios')
 
 @section('content')
-    <header><center>Lista de Usuarios</center></header>
 
     <table class="table table-striped">
         <thead>

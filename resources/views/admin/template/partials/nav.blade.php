@@ -11,7 +11,7 @@
                 <a class="nav-link" href="{{route('users.index')}}">Usuarios <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{route('users.index')}}">Categorias <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{route('categories.index')}}">Categorias <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('users.index')}}">Imagenes <span class="sr-only">(current)</span></a>

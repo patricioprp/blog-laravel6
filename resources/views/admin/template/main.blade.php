@@ -10,6 +10,7 @@
 @include('admin.template.partials.nav')
 
 <section>
+    @include('admin.template.partials.error')
     @include('flash::message')
     @yield('content')
 
