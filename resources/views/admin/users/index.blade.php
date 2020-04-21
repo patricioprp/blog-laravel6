@@ -3,6 +3,7 @@
 @section('title','Lista de Usuarios')
 
 @section('content')
+    <header><center>Lista de Usuarios</center></header>
 
     <table class="table table-striped">
         <thead>
@@ -36,6 +37,6 @@
     </table>
     {!! $users -> render()!!}
 
-        <a href="{{route('users.create')}}" class="btn btn-info float-right">Registrar Nuevo Usuario</a>
+    <a href="{{route('users.create')}}" class="btn btn-info float-right">Registrar Nuevo Usuario</a>
 
 @endsection
