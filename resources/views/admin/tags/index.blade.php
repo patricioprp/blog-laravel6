@@ -5,11 +5,23 @@
 @section('content')
     <header><center>Lista de Tags</center></header>
 
+    <a href="{{route('tags.create')}}" class="btn btn-info">Registrar Nuevo Tag</a>
+
+    {!! Form::open(['route' => 'tags.index', 'method' => 'GET' , 'class' => 'navbar-form pull-right']) !!}
+    <div class="input-group">
+        {!! Form::text('name', null , ['class' => 'form-control','placeholder'=>'Buscar Tag...', 'aria-describedby'=>'search']) !!}
+        <span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+    </div>
+    {!! Form::close() !!}
+
+
     <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Accion</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +38,5 @@
         </tbody>
     </table>
     {!! $tags -> render()!!}
-
-    <a href="{{route('tags.create')}}" class="btn btn-info float-right">Registrar Nuevo Tag</a>
 
 @endsection
