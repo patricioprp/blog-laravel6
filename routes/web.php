@@ -20,10 +20,13 @@ Route::group(['prefix' => 'admin'],function (){
         'as'    => 'categories.destroy'
         ]);
 
+    Route::resource('tags','TagsController')->middleware('auth');
+    Route::get('tags/{id}/destroy',[
+        'uses' => 'TagsController@destroy',
+        'as'    => 'tags.destroy'
+        ]);
+
     Route::get('/home', 'HomeController@index')->name('home');
-
-
-
 });
 
 Auth::routes(['register' => false]);
