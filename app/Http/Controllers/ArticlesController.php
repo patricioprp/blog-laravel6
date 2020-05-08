@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Tag;
+use App\Article;
+use App\Image;
 
 
 class ArticlesController extends Controller
@@ -42,10 +44,29 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
+
+        //Manipulacion de Imagenes
+
+        if($request->file('image'))
+        {
         $file=$request->file('image');
         $name= 'blogLagaceta_' . time() . '.' . $file->getClientOriginalExtension();
         $path = public_path() . '/images/articles/';
         $file->move($path,$name);
+    }
+        $article = new Article($request->all());
+        $article->user_id = \Auth::user()->id;
+        $article->save();
+
+        $article->tags()->sync($request->tags);
+
+        $image= new Image();
+        $image-> name=$name;
+        $image->article()->associate($article);
+        $image->save();
+
+        flash("Noticia " .$article->title ." Creada Correctamente");
+        return redirect()->route('articles.index');
     }
 
     /**

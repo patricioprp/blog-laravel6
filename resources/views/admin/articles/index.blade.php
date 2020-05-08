@@ -1,6 +1,6 @@
-@extends('admin.template.mail')
+@extends('admin.template.main')
 
-@section('title','Articulos')
+@section('title','Listado de Articulos')
 
 @section('content')
 
