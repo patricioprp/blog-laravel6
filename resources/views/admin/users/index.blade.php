@@ -5,6 +5,16 @@
 @section('content')
     <header><center>Lista de Usuarios</center></header>
 
+    <a href="{{route('users.create')}}" class="btn btn-info">Registrar Nuevo Usuario</a>
+
+    {!! Form::open(['route' => 'users.index', 'method' => 'GET' , 'class' => 'navbar-form pull-right']) !!}
+    <div class="input-group">
+        {!! Form::text('name', null , ['class' => 'form-control','placeholder'=>'Buscar Usuario...', 'aria-describedby'=>'search']) !!}
+        <span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+    </div>
+    {!! Form::close() !!}
+
     <table class="table table-striped">
         <thead>
         <tr>
@@ -36,7 +46,5 @@
         </tbody>
     </table>
     {!! $users -> render()!!}
-
-    <a href="{{route('users.create')}}" class="btn btn-info float-right">Registrar Nuevo Usuario</a>
 
 @endsection

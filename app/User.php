@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','type',
     ];
 
     /**
@@ -39,5 +39,8 @@ class User extends Authenticatable
 
     public function articles(){
         return $this -> hasMany('App\Article');
+    }
+    public function scopeSearch($query, $name){
+        return $query-> where('name','LIKE','%' . $name . '%');
     }
 }

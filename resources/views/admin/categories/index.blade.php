@@ -3,7 +3,7 @@
 @section('title','Lista de Categorias')
 
 @section('content')
-    <header><center>Lista de Usuarios</center></header>
+    <header><center>Lista de Categorias</center></header>
 
     <table class="table table-striped">
         <thead>

@@ -3,19 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Category;
+use App\Tag;
 
-class UsersController extends Controller
+
+class ArticlesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request) //listado de usuarios
+    public function index()
     {
-        $users = User::search($request->name)->orderBy('id', 'ASC')->paginate(9);
-        return view ('admin.users.index')->with('users',$users);
+        return view ('admin.articles.index');
     }
 
     /**
@@ -25,7 +26,12 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view ('admin.users.create');
+        $categories = Category::orderBy('name','ASC')->pluck('name','id');
+        $tags = Tag::orderBy('name','ASC')->pluck('name','id');
+
+        return view ('admin.articles.create')
+            ->with('categories',$categories)
+            ->with('tags',$tags);
     }
 
     /**
@@ -36,20 +42,10 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|min:2|max:120',
-            'email' => 'required|unique:users|max:255',
-            'password'=>'min:4|max:30|required',
-            'type'=>'required'
-        ]);
-
-        $user = new User($request->all());
-        $user-> password = bcrypt($request->password);
-        $user -> save();
-
-        flash("Usuario " .$user->name ." Creado Correctamente");
-        return redirect()->route('users.index');
-
+        $file=$request->file('image');
+        $name= 'blogLagaceta_' . time() . '.' . $file->getClientOriginalExtension();
+        $path = public_path() . '/images/articles/';
+        $file->move($path,$name);
     }
 
     /**
@@ -71,8 +67,7 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view('admin.users.edit')->with('user', $user);
+        //
     }
 
     /**
@@ -84,11 +79,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user= User::find($id);
-        $user->fill($request->all());
-        $user->save();
-        flash('Los cambios del Usuario '. $user->name . 'se guardaron correctamente');
-        return redirect()->route('users.index');
+        //
     }
 
     /**
@@ -99,9 +90,6 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-        flash('Usuario '. $user->name . 'a sido borrado de forma exitosa')->error();
-        return redirect()->route('users.index');
+        //
     }
 }
