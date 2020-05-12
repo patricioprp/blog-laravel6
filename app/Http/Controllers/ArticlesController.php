@@ -44,7 +44,13 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-
+        //request para campos duplicados o con caracteres minimos
+        $this->validate($request, [
+            'title' => 'required|unique:articles|min:8|max:255',
+            'category_id'=>'required',
+            'content'=>'min:60|required',
+            'image'=>'required'
+        ]);
         //Manipulacion de Imagenes
 
         if($request->file('image'))
