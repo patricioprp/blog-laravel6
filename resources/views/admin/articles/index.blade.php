@@ -29,9 +29,9 @@
                 <td>{{$article->title}}</td>
                 <td>{{$article->category->name}}</td>
                 <td>{{$article->user->name}}</td>
-                <td><a href=" {{route('categories.edit', $article->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                <td><a href=" {{route('articles.edit', $article->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
 
-                    <a href=" {{ route('categories.destroy', $article->id) }}" onclick="return confirm('¿Esta seguro que desea eliminarla?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
+                    <a href=" {{ route('articles.destroy', $article->id) }}" onclick="return confirm('¿Esta seguro que desea eliminarlo?')" class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
                 </td>
             </tr>
         @endforeach

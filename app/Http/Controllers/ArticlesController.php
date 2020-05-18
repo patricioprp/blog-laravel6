@@ -101,7 +101,18 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::find($id);
+        $article->category;
+        $categories = Category::orderBy('name','ASC')->pluck('name','id'); // no se usa lists
+        $tags = Tag::orderBy('name','DESC')->pluck('name','id'); //ya no se usa list, ahora se usa pluck
+        $my_tags = $article->tags->pluck('id')->ToArray();
+
+        return view('admin.articles.edit')
+            ->with('categories',$categories)
+            ->with('article',$article)
+            ->with('tags',$tags)
+            ->with('my_tags',$my_tags);
+
     }
 
     /**
@@ -113,7 +124,13 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $article = Article::find($id);
+        $article->fill($request->all());
+        $article->save();
+
+        $article->tags()->sync($request->tags);
+        flash('Articulo '. $article->title . 'a sido actualizado de forma exitosa');
+        return redirect()->route('articles.index');
     }
 
     /**
@@ -124,6 +141,10 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
-        //
+            $article = Article::find($id);
+            $article->delete();
+            flash('Articulo '. $article->title . 'a sido borrado de forma exitosa')->error();
+            return redirect()->route('articles.index');
+
     }
 }
