@@ -24,10 +24,8 @@
     <script src="{{asset('plugins/trumbowyg/dist/trumbowyg.min.js')}}"></script>
 
 </body>
-
-@yield('js')
-
 <footer>
     @include('admin.template.partials.footer')
 </footer>
+@yield('js')
 </html>

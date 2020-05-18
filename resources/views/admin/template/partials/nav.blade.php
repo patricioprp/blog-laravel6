@@ -8,8 +8,8 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                <a class="nav-link" href="{{route('users.index')}}">Usuarios <span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('articles.index')}}">Articulos <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('categories.index')}}">Categorias <span class="sr-only">(current)</span></a>
@@ -17,6 +17,10 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('users.index')}}">Imagenes <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('users.index')}}">Usuarios <span class="sr-only">(current)</span></a>
+            </li>
+
             <li class="nav-item active">
                 <a class="nav-link" href="{{route('tags.index')}}">Tags <span class="sr-only">(current)</span></a>
             </li>

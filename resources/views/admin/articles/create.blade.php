@@ -12,7 +12,7 @@
 
     <div class="form-group">
         {!! Form::label('category_id', 'Categoria') !!}
-        {!! Form::select('category_id', $categories,null,['class'=>'form-control select-category','placeholder'=>'Seleccione una Categoria','required']) !!}
+        {!! Form::select('category_id', $categories,null,['class'=>'form-control select-category','required']) !!}
 
     </div>
 
@@ -46,7 +46,9 @@
         placeholder_text_multiple: 'Seleccione un maximo de 3 tags',
         max_selected_options: 3,
         });
-    $('.select-category').chosen();
+    $('.select-category').chosen({
+        placeholder_text_multiple:'Your text as placeholder',
+    });
 
     $('.textarea-content').trumbowyg();
 </script>

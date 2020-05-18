@@ -3,6 +3,9 @@
 @section('title','Lista de Categorias')
 
 @section('content')
+
+    <a href="{{route('categories.create')}}" class="btn btn-info">Registrar Categoria</a>
+
     <header><center>Lista de Categorias</center></header>
 
     <table class="table table-striped">
@@ -28,6 +31,5 @@
 <div class="text-center">
 {!! $categories->render() !!}
 </div>
-    <a href="{{route('categories.create')}}" class="btn btn-info float-right">Registrar Categoria</a>
 
 @endsection

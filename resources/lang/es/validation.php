@@ -86,7 +86,7 @@ return [
     'min'       => [
         'numeric' => 'El tamaño de :attribute debe ser de al menos :min.',
         'file'    => 'El tamaño de :attribute debe ser de al menos :min kilobytes.',
-        'string'  => ':attribute debe contener al menos :min caracteres.',
+        'string'  => 'El campo :attribute debe contener al menos :min caracteres.',
         'array'   => ':attribute debe tener al menos :min elementos.',
     ],
     'not_in'               => ':attribute es inválido.',
@@ -95,7 +95,7 @@ return [
     'password'             => 'La contraseña es incorrecta.',
     'present'              => 'El campo :attribute debe estar presente.',
     'regex'                => 'El formato de :attribute es inválido.',
-    'required'             => 'El campo :attribute es obligatorio.',
+    'required'             => 'El elemento :attribute es obligatorio.',
     'required_if'          => 'El campo :attribute es obligatorio cuando :other es :value.',
     'required_unless'      => 'El campo :attribute es obligatorio a menos que :other esté en :values.',
     'required_with'        => 'El campo :attribute es obligatorio cuando :values está presente.',
