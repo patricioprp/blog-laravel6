@@ -8,7 +8,7 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <img src="/image/articles/blogLagaceta_1589896637.jpg" class="img-responsive">
+                        <img src="/images/articles/{{ $image->name }}" class="img-responsive">
                     </div>
                     <div class="panel-footer">{{$image->article->title}}</div>
                 </div>
