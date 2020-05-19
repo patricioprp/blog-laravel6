@@ -52,7 +52,7 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         //request para campos duplicados o con caracteres minimos
-        $this->validate($request, [
+        $this->validate($request,[
             'title' => 'required|unique:articles|min:8|max:255',
             'category_id'=>'required',
             'content'=>'min:60|required',
@@ -141,10 +141,12 @@ class ArticlesController extends Controller
      */
     public function destroy($id)
     {
+            $name= Image::where('article_id', $id)->value('name');
+            unlink(public_path() .  "/images/articles/$name" );
             $article = Article::find($id);
             $article->delete();
             flash('Articulo '. $article->title . 'a sido borrado de forma exitosa')->error();
             return redirect()->route('articles.index');
-
     }
+
 }
