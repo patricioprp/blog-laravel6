@@ -12,9 +12,9 @@ class CategoriesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::orderBy('id', 'DESC')->paginate(9);
+        $categories = Category::search($request->name)->orderBy('id', 'DESC')->paginate(9);
         return view('admin.categories.index')->with('categories',$categories);
     }
 

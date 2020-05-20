@@ -6,6 +6,14 @@
 
     <a href="{{route('categories.create')}}" class="btn btn-info">Registrar Categoria</a>
 
+    {!! Form::open(['route' => 'categories.index', 'method' => 'GET' , 'class' => 'navbar-form pull-right']) !!}
+    <div class="input-group">
+        {!! Form::text('name', null , ['class' => 'form-control','placeholder'=>'Buscar Categoria...', 'aria-describedby'=>'search']) !!}
+        <span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </span>
+    </div>
+    {!! Form::close() !!}
+
     <header><center>Lista de Categorias</center></header>
 
     <table class="table table-striped">

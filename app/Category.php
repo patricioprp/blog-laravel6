@@ -13,4 +13,8 @@ class Category extends Model
     public function articles(){  //establece la relacion entre modelos, en este caso 1 a muchos
         return $this -> hasMany('App\Articles');
     }
+
+    public function scopeSearch($query, $name){
+        return $query-> where('name','LIKE','%' . $name . '%');
+    }
 }

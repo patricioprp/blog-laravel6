@@ -3,6 +3,7 @@
 @section('title','Listado de Imagenes')
 
 @section('content')
+
     <div class="row">
         @foreach($images as $image)
             <div class="col-md-4">
@@ -16,4 +17,7 @@
         @endforeach
     </div>
 
+<div class="text-center">
+    {!! $images->render() !!}
+</div>
 @endsection

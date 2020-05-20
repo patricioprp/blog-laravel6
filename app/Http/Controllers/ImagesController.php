@@ -14,10 +14,11 @@ class ImagesController extends Controller
      */
     public function index()
     {
-        $images = Image::all();
+        $images = Image::orderBy('id', 'DESC')->paginate(4);
         $images->each(function ($images) {
             $images->article;
         });
+
         return view('admin.images.index')
             ->with('images', $images);
     }
