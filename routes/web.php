@@ -2,11 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
+//QUITAR REGISTRO
+Auth::routes(['register' => false]);
+
+//ROUTES FRONTEND
 Route::get('/',[
     'as'=> 'front.index',
-    function () {
-    return view('admin.front.index');
-}]);
+    'uses'=> 'FrontController@index'
+]);
+
+//ROUTES BACKEND
 
 Route::group(['prefix' => 'admin'],function (){
 
@@ -38,7 +43,4 @@ Route::group(['prefix' => 'admin'],function (){
 
     Route::resource('articles','ArticlesController')->middleware('auth');
 
-    Route::get('/home', 'HomeController@index')->name('home');
 });
-
-Auth::routes(['register' => false]);
