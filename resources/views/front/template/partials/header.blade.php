@@ -1,8 +1,8 @@
 <div class="text-center">
     <br>
-    <img src="{{asset('images/logo.png')}}" class="logo">
+    <img src="https://www.lagaceta.com.ar/images/brand.svg">
     <br>
-    <h1 class="title-front-header">Blog Facilito</h1>
+    <h1 class="title-front-header">Instituto ISMUNT</h1>
     <br>
     <a href="http://codigofacilito.com">Codigo Facilito</a>|<a href="http://www.lagaceta.com.ar">Lagaceta</a>
 </div>

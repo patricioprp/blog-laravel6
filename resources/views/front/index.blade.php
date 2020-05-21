@@ -2,6 +2,7 @@
 @section('title','Noticias')
 
 @section('content')
+
     <h3 class="title-front left">Ultimos Articulos</h3>
     <div class="row">
         <div class="col-md-8">
@@ -20,7 +21,7 @@
                             <hr>
                             <i class="fa fa-folder-open-o"></i><a href="">{{$article->category->name}}</a>
                             <div class="pull-right">
-                                <i class="fa fa-clock-o"></i> Hace 3 Minutos
+                                <i class="fa fa-clock-o"></i> {{$article->created_at->diffForHumans()}}
                             </div>
                         </div>
                 </div>
