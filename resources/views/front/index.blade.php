@@ -2,7 +2,6 @@
 @section('title','Noticias')
 
 @section('content')
-
     <h3 class="title-front left">Ultimos Articulos</h3>
     <div class="row">
         <div class="col-md-8">
@@ -33,28 +32,7 @@
             {!! $articles->render() !!}
             </div>
         <div class="col-md-4 aside">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Categorias</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <span class="badge">14</span>
-                                Noticias
-                        </li>
-                        <li class="list-group-item">
-                            <span class="badge">2</span>
-                            Programacion
-                        </li><li class="list-group-item">
-                            <span class="badge">1</span>
-                            Tips
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
+          @include('front.template.partials.aside')
         </div>
     </div>
 
