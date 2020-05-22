@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Article;
+use App\Category;
 use Carbon\Carbon;
 
 class FrontController extends Controller
@@ -31,5 +32,8 @@ class FrontController extends Controller
             ->with('articles',$articles);
     }
 
+    public function search($name){
+        $category = Category::Search($name)->get();
+}
 
 }

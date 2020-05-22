@@ -53,10 +53,10 @@ class ArticlesController extends Controller
     {
         //request para campos duplicados o con caracteres minimos
         $this->validate($request,[
-            'title' => 'required|unique:articles|min:8|max:255',
+            'title' => 'required|unique:articles|min:10|max:255',
             'category_id'=>'required',
             'content'=>'min:60|required',
-            'image'=>'required'
+            'image'=>'required|image|mimes:jpeg,png|max:3000'
         ]);
         //Manipulacion de Imagenes
 

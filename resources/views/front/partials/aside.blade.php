@@ -6,8 +6,9 @@
         <ul class="list-group">
             @foreach($categories as $category)
             <li class="list-group-item">
-                <span class="badge">{{ $category->count()}}</span>
-                {{$category->name}}
+                <span class="badge">{{ $category->articles->count()}}</span>
+                <a href="{{route('front.search.category', $category->name)}}">
+                {{$category->name}}</a>
             </li>
             @endforeach
         </ul>
