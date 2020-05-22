@@ -21,7 +21,11 @@
     </div>
     <div class="panel-body">
         @foreach($tags as $tag)
-            <span class="label label-default">{{$tag->name}}</span>
+            <span class="label">
+                <a href=""></a>
+                 <a href="{{route('front.search.tag', $tag->name)}}">
+                     {{$tag->name}}</a>
+            </span>
         @endforeach
     </div>
 </div>
