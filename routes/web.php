@@ -21,9 +21,18 @@ Route::get('tags/{name}',[
     'as' => 'front.search.tag'
 ]);
 
+Route::get('articles/{slug}',[
+    'uses' => 'FrontController@viewArticle',
+    'as' => 'front.view.article'
+]);
+
 //ROUTES BACKEND
 
 Route::group(['prefix' => 'admin'],function (){
+
+   // Route::get('/', function () {
+    //    return view('admin.template.main');
+   // });
 
     Route::resource('users','UsersController')->middleware('auth');
     Route::get('users/{id}/destroy',[
@@ -43,7 +52,7 @@ Route::group(['prefix' => 'admin'],function (){
         'as'    => 'tags.destroy'
         ]);
 
-    Route::resource('articles','TagsController')->middleware('auth');
+    Route::resource('articles','ArticlesController')->middleware('auth');
     Route::get('articles/{id}/destroy',[
         'uses' => 'ArticlesController@destroy',
         'as'    => 'articles.destroy'

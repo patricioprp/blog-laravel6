@@ -17,8 +17,8 @@
 <div class="container">
     @yield('content')
 <footer>
-    Todos los derechos reservados{{ date('Y') }}
-    <div class="pull-right">Carlos Fernandes</div>
+    Todos los derechos reservados {{ date('Y') }}
+    <div class="pull-right">Ezequiel Zurita</div>
 </footer>
 </div>
 

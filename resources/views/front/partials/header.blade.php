@@ -4,5 +4,5 @@
     <br>
     <h1 class="title-front-header">Instituto ISMUNT</h1>
     <br>
-    <a href="http://codigofacilito.com">Codigo Facilito</a>|<a href="http://www.lagaceta.com.ar">Lagaceta</a>
+    <a href="{{route('front.index')}}">Inicio</a>|<a href="{{route('login')}}">Administrador</a>
 </div>

@@ -57,4 +57,14 @@ class FrontController extends Controller
             ->with('articles',$articles);
         }
 
+        public function viewArticle($slug){
+
+        $article = Article::where('slug', $slug)->firstOrFail();
+        $article->category();
+        $article->user();
+        $article->tags();
+        $article->images();
+
+        return view('front.article')->with('article',$article);
+        }
 }
