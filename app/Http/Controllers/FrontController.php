@@ -7,6 +7,7 @@ use App\Article;
 use App\Category;
 use App\Tag;
 use Carbon\Carbon;
+use App\Image;
 
 class FrontController extends Controller
 {
@@ -64,7 +65,6 @@ class FrontController extends Controller
         $article->user();
         $article->tags();
         $article->images();
-
         return view('front.article')->with('article',$article);
         }
 }

@@ -6,10 +6,12 @@
     <h3 class="title-front left">{{$article->title}}</h3>
     <hr>
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-7">
+            @foreach($article->images as $image)
+                <img class="img-fluid img-article" src="{{ asset('images/articles/' . $image->name)}}" alt="...">
+            @endforeach
+                <hr>
                 {!!$article->content!!}
-                {{$article->image}}
-
             <hr>
             @foreach($article->tags as $tag)
                 {{$tag->name}}
